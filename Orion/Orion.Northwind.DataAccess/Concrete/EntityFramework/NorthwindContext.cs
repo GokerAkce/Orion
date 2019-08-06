@@ -1,4 +1,5 @@
-﻿using Orion.Northwind.Entities.Concrete;
+﻿using Orion.Northwind.DataAccess.Mappings;
+using Orion.Northwind.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -19,5 +20,10 @@ namespace Orion.Northwind.DataAccess.Concrete.EntityFramework
         }
 
         public DbSet<Product> Products { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new ProductMap());
+        }
     }
 }
