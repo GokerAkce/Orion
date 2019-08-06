@@ -37,6 +37,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Orion.Northwind.WcfService"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "56526"
+		SlnRelativePath = "Orion.Northwind.WcfService\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
