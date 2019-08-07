@@ -14,7 +14,7 @@ namespace Orion.Northwind.Entities.Concrete
         public int CategoryId { get; set; }
         public string QuantityPerUnit { get; set; }
         public decimal UnitPrice { get; set; }
-        public int UnitsInStock { get; set; }
-        public int UnitsOnOrder { get; set; }
+        //public int? UnitsInStock { get; set; }
+        //public int UnitsOnOrder { get; set; }
     }
 }

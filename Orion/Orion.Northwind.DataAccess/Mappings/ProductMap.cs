@@ -18,8 +18,8 @@ namespace Orion.Northwind.DataAccess.Mappings
             Property(x => x.ProductId).HasColumnName("ProductID");
             Property(x => x.ProductName).HasColumnName("ProductName");
             Property(x => x.QuantityPerUnit).HasColumnName("QuantityPerUnit");
-            Property(x => x.UnitsInStock).HasColumnName("UnitsInStock");
-            Property(x => x.UnitsOnOrder).HasColumnName("UnitsOnOrder");
+            //Property(x => x.UnitsInStock).HasColumnName("UnitsInStock");
+            //Property(x => x.UnitsOnOrder).HasColumnName("UnitsOnOrder");
             Property(x => x.UnitPrice).HasColumnName("UnitPrice");
         }
     }
