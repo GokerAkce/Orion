@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Orion.Core.DataAccess.EntityFramework
 {
-    class EfQueryableRepository<T> : IQueryableRepository<T> where T : class, IEntity, new()
+    public class EfQueryableRepository<T> : IQueryableRepository<T> where T : class, IEntity, new()
     {
         private DbContext _context;
         IDbSet<T> _entities;
