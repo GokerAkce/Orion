@@ -6,9 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Orion.Northwind.Entities.Concrete;
 using Orion.Northwind.DataAccess.Abstract;
-using Orion.Core.CrossCuttingConcerns.Validation.FluentValidation;
 using Orion.Northwind.Business.ValidationRules.FluentValidation;
-using Orion.Core.Aspect.Postsharp;
+using System.Transactions;
+using Orion.Core.Aspect.Postsharp.ValidationAspects;
+using Orion.Core.Aspect.Postsharp.TransactionAspects;
 
 namespace Orion.Northwind.Business.Concrete.Manager
 {
@@ -45,6 +46,14 @@ namespace Orion.Northwind.Business.Concrete.Manager
         {
             var result = _productDal.Update(product);
             return result;
+        }
+
+        [TransactionScopeAspect]
+        public void TransactionalOperation(Product product1, Product product2)
+        {
+            _productDal.Add(product1);
+            //Business methods
+            _productDal.Add(product2);
         }
     }
 }

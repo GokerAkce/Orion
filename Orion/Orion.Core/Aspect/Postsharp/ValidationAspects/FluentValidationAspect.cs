@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Orion.Core.Aspect.Postsharp
+namespace Orion.Core.Aspect.Postsharp.ValidationAspects
 {
     [Serializable]
     public class FluentValidationAspect : OnMethodBoundaryAspect
