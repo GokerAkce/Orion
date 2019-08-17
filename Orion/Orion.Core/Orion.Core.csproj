@@ -60,6 +60,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aspect\Postsharp\CacheAspects\CacheAspect.cs" />
+    <Compile Include="Aspect\Postsharp\CacheAspects\CacheRemoveAspect.cs" />
     <Compile Include="Aspect\Postsharp\TransactionAspects\TransactionScopeAspect.cs" />
     <Compile Include="Aspect\Postsharp\ValidationAspects\FluentValidationAspect.cs" />
     <Compile Include="CrossCuttingConcerns\Caching\ICacheManager.cs" />

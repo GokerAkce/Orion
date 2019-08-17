@@ -10,6 +10,8 @@ using Orion.Northwind.Business.ValidationRules.FluentValidation;
 using System.Transactions;
 using Orion.Core.Aspect.Postsharp.ValidationAspects;
 using Orion.Core.Aspect.Postsharp.TransactionAspects;
+using Orion.Core.Aspect.Postsharp.CacheAspects;
+using Orion.Core.CrossCuttingConcerns.Caching.Microsoft;
 
 namespace Orion.Northwind.Business.Concrete.Manager
 {
@@ -23,12 +25,14 @@ namespace Orion.Northwind.Business.Concrete.Manager
         }
 
         [FluentValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect(typeof(MemoryCacheManager))]
         public Product Add(Product product)
         {
             _productDal.Add(product);
             return product;
         }
 
+        [CacheAspect(typeof(MemoryCacheManager))]
         public List<Product> GetAll()
         {
             var result = _productDal.GetList();
