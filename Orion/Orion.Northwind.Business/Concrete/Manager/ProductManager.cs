@@ -36,6 +36,7 @@ namespace Orion.Northwind.Business.Concrete.Manager
 
         [CacheAspect(typeof(MemoryCacheManager))]
         [LogAspect(typeof(DatabaseLogger))]
+        [LogAspect(typeof(FileLogger))]
         public List<Product> GetAll()
         {
             var result = _productDal.GetList();
