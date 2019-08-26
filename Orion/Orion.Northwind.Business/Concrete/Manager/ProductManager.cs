@@ -12,6 +12,8 @@ using Orion.Core.Aspect.Postsharp.ValidationAspects;
 using Orion.Core.Aspect.Postsharp.TransactionAspects;
 using Orion.Core.Aspect.Postsharp.CacheAspects;
 using Orion.Core.CrossCuttingConcerns.Caching.Microsoft;
+using Orion.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
+using Orion.Core.Aspect.Postsharp.LogAspect;
 
 namespace Orion.Northwind.Business.Concrete.Manager
 {
@@ -33,6 +35,7 @@ namespace Orion.Northwind.Business.Concrete.Manager
         }
 
         [CacheAspect(typeof(MemoryCacheManager))]
+        [LogAspect(typeof(DatabaseLogger))]
         public List<Product> GetAll()
         {
             var result = _productDal.GetList();
