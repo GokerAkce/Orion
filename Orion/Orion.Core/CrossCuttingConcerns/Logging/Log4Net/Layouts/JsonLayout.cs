@@ -21,7 +21,7 @@ namespace Orion.Core.CrossCuttingConcerns.Logging.Log4Net.Layouts
         {
             var logEvent = new SerializableLogEvent(loggingEvent);
 
-            var json = JsonConvert.SerializeObject(loggingEvent, Formatting.Indented);
+            var json = JsonConvert.SerializeObject(logEvent, Formatting.Indented);
             writer.WriteLine(json);
         }
     }
