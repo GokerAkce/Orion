@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Orion.Core.CrossCuttingConcerns.Logging.Log4Net
 {
+    [Serializable]
     public class LoggerService
     {
         private ILog _log;
