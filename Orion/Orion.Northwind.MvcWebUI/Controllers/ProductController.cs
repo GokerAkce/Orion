@@ -1,4 +1,5 @@
 ﻿using Orion.Northwind.Business.Abstract;
+using Orion.Northwind.Entities.Concrete;
 using Orion.Northwind.MvcWebUI.Models;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,26 @@ namespace Orion.Northwind.MvcWebUI.Controllers
                 Products = _productService.GetAll()
         };
             return View(model);
+        }
+
+        public string AddUpdate()
+        {
+            _productService.TransactionalOperation(new Product
+            {
+                CategoryId = 1,
+                ProductName = "Computer 1",
+                QuantityPerUnit = "1",
+                UnitPrice = 21
+            }, new Product
+            {
+                CategoryId = 1,
+                ProductName = "Computer 2",
+                QuantityPerUnit = "1",
+                UnitPrice = 3,
+                ProductId = 2
+            }
+            );
+            return "Done";
         }
     }
 }

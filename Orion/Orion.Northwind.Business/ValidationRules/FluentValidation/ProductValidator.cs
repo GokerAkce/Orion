@@ -14,7 +14,7 @@ namespace Orion.Northwind.Business.ValidationRules.FluentValidation
         {
             RuleFor(p => p.ProductName).NotEmpty();
             RuleFor(p => p.CategoryId).NotEmpty();
-            RuleFor(p => p.UnitPrice).GreaterThan(0);
+            RuleFor(p => p.UnitPrice).GreaterThan(20);
             RuleFor(p => p.QuantityPerUnit).NotEmpty();
             RuleFor(p => p.ProductName).Length(2, 25);
             //RuleFor(p => p.ProductName).Must(StartWithSmt);
